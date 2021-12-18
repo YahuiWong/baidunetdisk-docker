@@ -1,5 +1,5 @@
-[![Docker Size](https://img.shields.io/docker/image-size/tzuhsiao/baidunetdisk)](https://hub.docker.com/r/tzuhsiao/baidunetdisk)
-[![Docker Pulls](https://img.shields.io/docker/pulls/tzuhsiao/baidunetdisk)](https://hub.docker.com/r/tzuhsiao/baidunetdisk)
+[![Docker Size](https://img.shields.io/docker/image-size/tzuhsiao/baidunetdisk)](https://hub.docker.com/r/yahuiwong/baidunetdisk)
+[![Docker Pulls](https://img.shields.io/docker/pulls/tzuhsiao/baidunetdisk)](https://hub.docker.com/r/yahuiwong/baidunetdisk)
 
 # 运行
 ```
@@ -9,7 +9,7 @@ docker run --name baidunetdisk \
   -p {VNC端口}:5900 \
   -p {WEB端口}:6080 \
   -e VNC_SERVER_PASSWD='{VNC密码}' \
-  tzuhsiao/baidunetdisk:latest
+  yahuiwong/baidunetdisk:4.3.0
 ```
 
 ## 通过VNC访问

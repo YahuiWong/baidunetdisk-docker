@@ -3,6 +3,9 @@ FROM ubuntu:20.04
 RUN  sed -i 's/archive.ubuntu.com/mirrors.ustc.edu.cn/g' /etc/apt/sources.list &&\
 sed -i 's/security.ubuntu.com/mirrors.ustc.edu.cn/g' /etc/apt/sources.list
 
+ENV noVNC_Version="1.3.0"
+ENV baidunetdisk_Version="4.3.0"
+
 ENV VNC_SERVER_PASSWD password
 
 ENV LC_ALL C.UTF-8
@@ -45,16 +48,17 @@ RUN mkdir /root/.vnc && \
   touch /root/.vnc/passwd
 
 RUN wget \
-    https://issuepcdn.baidupcs.com/issue/netdisk/LinuxGuanjia/4.3.0/baidunetdisk_4.3.0_amd64.deb \
+    https://issuepcdn.baidupcs.com/issue/netdisk/LinuxGuanjia/${baidunetdisk_Version}/baidunetdisk_${baidunetdisk_Version}_amd64.deb \
     -O baidunetdisk.deb && \
   dpkg -i baidunetdisk.deb && \
   rm baidunetdisk.deb -f
 
 RUN wget \
-    https://github.com/novnc/noVNC/archive/v1.1.0.tar.gz -O novnc.tar.gz && \
+    https://github.com/novnc/noVNC/archive/refs/tags/v${noVNC_Version}.tar.gz -O novnc.tar.gz && \
   mkdir -p /root/novnc && \
   tar -xzf novnc.tar.gz -C /root/novnc && \
-  rm novnc.tar.gz websockify.tar.gz -f
+  rm novnc.tar.gz websockify.tar.gz -f &&\
+  mv /root/novnc/noVNC-${noVNC_Version} /root/novnc/noVNC
 
 # Remove cap_net_admin capabilities to avoid failing with 'operation not permitted'.
 RUN setcap -r `which i3status`
