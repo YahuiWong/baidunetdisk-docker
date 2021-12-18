@@ -1,0 +1,14 @@
+version: "3"
+services:
+  baidunetdisk:
+    image: yahuiwong/baidunetdisk:v4.3.0
+    container_name: baidunetdisk
+    environment:
+      - VNC_SERVER_PASSWD=passwd
+    volumes:
+      - ./config:/root/baidunetdisk
+      - ./baidunetdiskdownload:/root/baidunetdiskdownload
+    ports:
+      - 5900:5900 #{VNC端口}
+      - 6080:6080 # {WEB端口}
+    restart: unless-stopped
