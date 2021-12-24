@@ -1,5 +1,5 @@
-[![Docker Size](https://img.shields.io/docker/image-size/tzuhsiao/baidunetdisk)](https://hub.docker.com/r/yahuiwong/baidunetdisk)
-[![Docker Pulls](https://img.shields.io/docker/pulls/tzuhsiao/baidunetdisk)](https://hub.docker.com/r/yahuiwong/baidunetdisk)
+[![Docker Size](https://img.shields.io/docker/image-size/yahuiwong/baidunetdisk)](https://hub.docker.com/r/yahuiwong/baidunetdisk)
+[![Docker Pulls](https://img.shields.io/docker/pulls/yahuiwong/baidunetdisk)](https://hub.docker.com/r/yahuiwong/baidunetdisk)
 
 # 运行
 ```
